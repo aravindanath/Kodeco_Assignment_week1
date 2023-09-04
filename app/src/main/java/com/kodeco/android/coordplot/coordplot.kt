@@ -5,26 +5,29 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material3.MaterialTheme
+
 import androidx.compose.material3.Slider
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
+
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.Color.Companion.Yellow
+
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.style.TextAlign
+
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -44,26 +47,22 @@ fun PlotSurface() {
 
 
         ){
-
-            YellowCircleInBox()
+    var xPercentage: Float by remember { mutableStateOf(0.5f) }
+    var yPercentage: Float by remember { mutableStateOf(0.5f) }
+            YellowCircleInBox(xPercentage,yPercentage)
             Text(stringResource(R.string.x_axis))
-            Slider(value = 0.5f,
+            Slider(value = xPercentage,
                 valueRange = 0.1f..1f,
-                onValueChange = {},
+                onValueChange = {newValue -> xPercentage = newValue},
 
             )
             Text(stringResource(R.string.y_axis))
-            Slider(value = 0.5f,
+            Slider(value = yPercentage,
                 valueRange = 0.1f..1f,
-                onValueChange = {},
+                onValueChange = {newValue -> yPercentage = newValue},
 
             )
         }
-        // TODO Build out the plot surface
-        //  This should include a Column composable that
-        //  includes a Map, and two MapSlider composables
-        //  (one slider for each axis).
-
 
     }
 
@@ -79,10 +78,6 @@ fun PlotSurfacePreview() {
 
 @Composable
 fun Map(xPercent: Float, yPercent: Float, modifier: Modifier = Modifier) {
-    // TODO fill out the square map here.
-    //  Create a Box composable with a size of 300.dp
-    //  and then create an inner Box composable
-    //  with a clip shape of CircleShape.
 }
 
 @Preview(showBackground = true)
@@ -90,37 +85,36 @@ fun Map(xPercent: Float, yPercent: Float, modifier: Modifier = Modifier) {
 fun MapPreview() {
     PlotSurface()
     MyApplicationTheme {
-
         Map(xPercent = 0.5f, yPercent = 0.5f)
     }
 }
 
 
 @Composable
-fun YellowCircleInBox() {
+fun YellowCircleInBox(xPercentage:Float,yPercentage:Float) {
         Box(
             modifier = Modifier
                 .size(300.dp, 300.dp) // Set the size of the box
                 .background(Color.Blue), // Set the background color to yellow
-            contentAlignment = Alignment.Center
         ) {
-            // Create a circle inside the box
+        // Create a circle inside the box
             Box(
+
                    modifier = Modifier
-//                    .offset((xPercent * 300 - 18).dp, (yPercent * 300 - 18).dp)
+                       .offset((xPercentage * 300 - 10).dp, (yPercentage * 300 - 10).dp)
 
-                    .size(20.dp) // Set the size of the circle
-                    .background(
-                        brush = Brush.horizontalGradient(
-                            colors = listOf(
-                                Color(0xFFFFD700), // Yellow color
-                                Color(0xFFFFA500)  // Orange color (optional)
-                            )
-                        ),
-                        shape = CircleShape
+                       .size(20.dp) // Set the size of the circle
+                       .background(
+                           brush = Brush.horizontalGradient(
+                               colors = listOf(
+                                   Color(0xFFFFD700), // Yellow color
+                                   Color(0xFFFFA500)  // Orange color (optional)
+                               )
+                           ),
+                           shape = CircleShape
 
 
-                    )
+                       )
             )
         }
     }
@@ -129,7 +123,9 @@ fun YellowCircleInBox() {
 @Composable
 fun YAxisNextToBox() {
     Column(
-        modifier = Modifier.fillMaxHeight().padding(16.dp),
+        modifier = Modifier
+            .fillMaxHeight()
+            .padding(16.dp),
         horizontalAlignment = Alignment.Start
     ) {
         // Y-axis labels
