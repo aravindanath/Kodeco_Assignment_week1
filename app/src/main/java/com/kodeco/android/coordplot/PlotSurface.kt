@@ -128,7 +128,6 @@ fun YAxisNextToBox() {
             .padding(16.dp),
         horizontalAlignment = Alignment.Start
     ) {
-        // Y-axis labels
         for (i in 5 downTo 1) {
             Row(
                 modifier = Modifier.padding(4.dp),
