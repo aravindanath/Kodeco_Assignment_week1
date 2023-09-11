@@ -108,9 +108,7 @@ fun Map(xPercent: Float, yPercent: Float, modifier: Modifier = Modifier) {
 @Preview(showBackground = true)
 @Composable
 fun MapPreview() {
-    SplashScreen {
 
-    }
     PlotSurface()
     MyApplicationTheme {
         Map(xPercent = 0.1f, yPercent = 0.1f)
