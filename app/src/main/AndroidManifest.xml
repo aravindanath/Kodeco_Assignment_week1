@@ -11,12 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CustomSplashScreenTheme"
-        tools:targetApi="34">
+        tools:targetApi="28">
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:label="coordplot"
-            android:theme="@style/Theme.MyApplication">
+            android:label="coordplot">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
