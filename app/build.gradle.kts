@@ -71,4 +71,6 @@ dependencies {
     implementation(libs.bundles.compose.ui)
     implementation(libs.bundles.androidx.activity)
     implementation(libs.fonts)
+    implementation("androidx.navigation:navigation-compose:2.7.2")
+    implementation("androidx.core:core-splashscreen:1.0.1")
 }
