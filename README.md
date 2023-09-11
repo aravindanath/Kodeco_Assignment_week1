@@ -6,6 +6,7 @@
 - [Features](#features)
 - [Getting Started](#getting-started)
     - [Prerequisites](#prerequisites)
+- [App Screen](#App-Screen)
   
 
 ## Features
@@ -20,3 +21,5 @@ To use the app, simply install the APK on your Android device or emulator. Upon 
 
 In order to utilize this app, the minimum required Android operating system version is 9, or Android API 28 and greater.
 
+## App Screen
+<img width="269" alt="Screenshot 2023-09-11 at 11 44 59 PM" src="https://github.com/aravindanath/Kodeco_Assignment_weekly/assets/20963786/1b9d09a5-f5c9-4cb0-abd2-b6a46c8d48ec">
