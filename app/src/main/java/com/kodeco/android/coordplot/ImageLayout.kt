@@ -18,7 +18,7 @@ fun StarInBox(xPercentage: Float, yPercentage: Float) {
     Box(
         modifier = Modifier
             .size(300.dp, 300.dp) // Set the size of the box
-            .background(Color.Blue), // Set the background color to yellow
+            .background(Color.Red), // Set the background color to yellow
     ) {
 
         // Create a Star inside the box
@@ -35,7 +35,7 @@ fun StarInBox(xPercentage: Float, yPercentage: Float) {
                 imageVector = Icons.Outlined.Star,
                 contentDescription = "Star",
                 modifier = Modifier.size(60.dp),
-                tint = Color.Red
+                tint = Color.Yellow
             )
         }
 
