@@ -7,6 +7,7 @@
 - [Getting Started](#getting-started)
     - [Prerequisites](#prerequisites)
 - [App Flow](#App-Flow)
+- [Link to install APK](#Link-to-install-APK)
   
 
 ## Features
@@ -23,4 +24,6 @@ In order to utilize this app, the minimum required Android operating system vers
 
 ## App Flow
 [Screen_recording_20230912_000642.webm](https://github.com/aravindanath/Kodeco_Assignment_weekly/assets/20963786/67b57342-2873-41cc-9a1d-e2f03fcd6307)
-
+## Link to install APK
+https://i.diawi.com/xrXCuL
+![app_assignment_week2](https://github.com/aravindanath/Kodeco_Assignment_weekly/assets/20963786/c7331581-72d6-45ef-bfa5-8f1cfd68de58)
